@@ -10,6 +10,7 @@ public class TariffWithSMS extends Tariff {
     public void setSMS(int SMS) {
         this.SMS = SMS;
     }
+
     @Override
     public String toString() {
 
