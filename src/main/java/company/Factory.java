@@ -1,41 +1,37 @@
 package company;
 
-import company.model.Smart1;
-import company.model.Smart2;
-import company.model.Smart3;
+import company.model.TariffWithSMS;
+import company.model.TariffWithMinutes;
 import company.model.Tariff;
 import company.model.enums.TariffsType;
 
 public class Factory {
-    public Tariff createTariff(TariffsType type){
-        Tariff tariff = null;
-
-        switch(type){
+    public Tariff createTariff(TariffsType type) {
+        switch (type) {
             case SMART1:
-                tariff = new Smart1();
-                tariff.setMegaBytes(1000);
-                tariff.setMinutes(1000);
-                tariff.setAmountClients(10);
-                tariff.setUserCharge(30);
-                tariff.setName("Smart1");
-                break;
+                Tariff smart1 = new Tariff();
+                smart1.setMegaBytes(1000);
+                smart1.setAmountClients(10);
+                smart1.setUserCharge(30);
+                smart1.setName("Smart1");
+                return smart1;
             case SMART2:
-                tariff = new Smart2();
-                tariff.setMegaBytes(500);
-                tariff.setMinutes(800);
-                tariff.setAmountClients(5);
-                tariff.setUserCharge(25);
-                tariff.setName("Smart2");
-                break;
+                TariffWithSMS smart2 = new TariffWithSMS();
+                smart2.setMegaBytes(500);
+                smart2.setSMS(100);
+                smart2.setAmountClients(5);
+                smart2.setUserCharge(25);
+                smart2.setName("Smart2");
+                return smart2;
             case SMART3:
-                tariff = new Smart3();
-                tariff.setMegaBytes(800);
-                tariff.setMinutes(500);
-                tariff.setAmountClients(8);
-                tariff.setUserCharge(20);
-                tariff.setName("Smart3");
-                break;
+                TariffWithMinutes smart3 = new TariffWithMinutes();
+                smart3.setMegaBytes(800);
+                smart3.setMinutes(500);
+                smart3.setAmountClients(8);
+                smart3.setUserCharge(20);
+                smart3.setName("Smart3");
+                return smart3;
         }
-        return tariff;
+        return null;
     }
 }

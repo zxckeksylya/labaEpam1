@@ -1,12 +1,10 @@
 package company.model;
 
-public abstract class Tariff {
+public class Tariff {
     private String name;
     private int userCharge;
     private int amountClients;
-    private int minutes;
     private int megaBytes;
-
 
     public String getName() {
         return name;
@@ -32,13 +30,6 @@ public abstract class Tariff {
         this.amountClients = amountClients;
     }
 
-    public int getMinutes() {
-        return minutes;
-    }
-
-    public void setMinutes(int minutes) {
-        this.minutes = minutes;
-    }
 
     public int getMegaBytes() {
         return megaBytes;
@@ -46,5 +37,13 @@ public abstract class Tariff {
 
     public void setMegaBytes(int megaBytes) {
         this.megaBytes = megaBytes;
+    }
+
+    public String toString() {
+
+        return "\n" + getName() + ": \n " +
+                "MegaBytes = " + getMegaBytes() + "\n" +
+                "Amount clients = " + getAmountClients() + "\n" +
+                "User Charge = " + getUserCharge();
     }
 }
